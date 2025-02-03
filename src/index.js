@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 // Post Api for add a function call here
 
-app.post("/functions/newbaseEncoded", (req, res) => {
+app.post("/functions/base64New", (req, res) => {
   const { input } = req.body;
   if (!input || typeof input !== "string") {
     return res.status(400).json({ error: "Invalid input, expected a string." });
@@ -18,9 +18,9 @@ app.post("/functions/newbaseEncoded", (req, res) => {
 });
 
 // Documentation Endpoint
-app.get("/functions/newbaseEncoded", (req, res) => {
+app.get("/functions/base64New", (req, res) => {
   res.json({
-    name: "newbaseEncoded",
+    name: "base64New",
     description: "Encode anything to base64",
     input: {
       type: "string",
